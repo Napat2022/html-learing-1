@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dev Creations</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   <!-- Upper part -->
+  <div class="bghome">
+    <div class="main">
+      <div class="logo">
+        <img src="logo.png">
+      </div>
+      <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="Korakoch.html">Korakoch Page</a></li>
+          <li><a href="Napat.html">Napat Page</a></li>
+          <li><a href="Nattapas.html">Nattapas Page</a></li>
+      </ul>
+    </div>
+      
+   <!-- Right-upper part -->
+
+    <div class="wavy">
+      <span style="--i:1;">S</span>
+      <span style="--i:2;">E</span>
+      <span style="--i:3;">R</span>
+      <span style="--i:4;">V</span>
+      <span style="--i:5;">E</span>
+      <span style="--i:6;">R</span>
+      <span style="--i:7;">1</span>
+    </div>
+
+   <!-- Time Date part -->
+    <div class="clock">
+      <div class="container">
+        <h2 id ="hour">00</h2>
+        <h2 class="dot">:</h2>
+        <h2 id ="minute">00</h2>
+        <h2 class="dot">:</h2>
+        <h2 id ="seconds">00</h2>
+        <span id ="ampm">AM</span>
+      </div>
+    </div>
+    <script>
+      function clock() {
+
+        let hours = document.getElementById('hour');
+        let minute = document.getElementById('minute');
+        let seconds = document.getElementById('seconds');
+        let ampm = document.getElementById('ampm');
+
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        var am = 'AM';
+
+        if( h > 12) {
+          h = h-12;
+          var am = 'PM';
+        }
+
+        h = (h < 0) ? '10' + h : h;
+        m = (m < 0) ? '10' + m : m;
+        s = (s < 0) ? '10' + s : s;
+
+        hour.innerHTML = h;
+        minute.innerHTML = m;
+        seconds.innerHTML = s;
+        ampm.innerHTML = am;
+      }
+
+      var interval = setInterval(clock, 1000);
+
+    </script>
+
+    <!-- Main part -->
+
+    <div class="title">
+        <h1>Wellcome to website</h1>
+    </div>
+    
+    <div class="botton">
+      <h1>This is beta website not complete</h1>
+    </div>
+
+    <!-- Bottom part -->
+
+    <div class="bgm">
+      <h1>Play Background Music</h1>
+    </div>
+
+    <audio controls class="player">
+      <source src="bgmsounds/homebgm.wav" type="audio/wav">
+    </audio>
+</body>
+</html>
